@@ -23,7 +23,7 @@ const NavBar = () => {
         </div>
 
         {/* Icons */}
-        <div className="flex">
+        <div className="flex gap-2">
           <MdOutlineChat size={20} />
           <MdNotifications size={20} />
           <MdPublic size={20} />
