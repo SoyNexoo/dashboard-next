@@ -1,74 +1,65 @@
 "use client"
 import Image from 'next/image'
 import React from 'react'
-import Tier from './Tier'
-
-
-
-
-
 const Transaction = () => {
 
-  const list = [
-    {
-      name: "John Doe",
-      status: "Pending",
-      date: "14.02.2024",
-      amount: "3.200"
-    },
-    {
-      name: "Robert Downey Jr.",
-      status: "Done",
-      date: "11.02.2024",
-      amount: "4.100"
-
-    },
-    {
-
-      name: "Miley Cyrus",
-      status: "Done",
-      date: "09.02.2024",
-      amount: "2.700"
-    },
-    {
-      name: "Justin Bieber",
-      status: "Cancelled",
-      date: "05.02.2024",
-      amount: "10.400"
-
-    }
-  ]
-
-  const getColor = (status: string) => {
-    switch (status) {
-      case "Pending":
-        return "yellow";
-      case "Cancelled":
-        return "red";
-      case "Done":
-        return "lime";
-      default:
-        return "#999";
-    }
-  };
-
   return (
-    <div>
-      <h2>Latest Transaction</h2>
-      <table>
+    <div className='bg-[#272c33] p-4'>
+      <h2 className='text-[2rem] font-light'>Latest Transaction</h2>
+      <table className='w-full  border-separate [border-spacing:0.75rem] '>
         <thead>
           <tr>
-            <td>Name</td>
-            <td>Status</td>
-            <td>Date</td>
-            <td>Amount</td>
+            <td className='font-bold'>Name</td>
+            <td className='font-bold'>Status</td>
+            <td className='font-bold'>Date</td>
+            <td className='font-bold'>Amount</td>
           </tr>
         </thead>
-        <tbody>
-          {list.map((ele, index) => (
-            <Tier name={ele.name} amount={ele.amount} date={ele.date} key={index} status={ele.status} color={getColor(ele.status)}></Tier>
-
-          ))}
+        <tbody className="">
+          <tr >
+            <td className='flex items-center gap-3'>
+              <Image src="https://github.com/safak/nextadmin/blob/completed/public/noavatar.png?raw=true" alt='' width={40} height={40} className='rounded-full object-cover' />
+              John Doe
+            </td>
+            <td>
+              <span className={`text-[#FFD97D]`}>Pending</span>
+            </td>
+            <td>14.02.2024</td>
+            <td>$3.200</td>
+          </tr>
+          <tr >
+            <td className='flex items-center gap-3'>
+              <Image src="https://github.com/safak/nextadmin/blob/completed/public/noavatar.png?raw=true" alt='' width={40} height={40} className='rounded-full object-cover' />
+              Robert Downey Jr.
+            </td>
+            <td>
+              <span className={`text-[#77E192]`}>Done</span>
+            </td>
+            <td>28.01.2024</td>
+            <td>$1.700</td>
+          </tr>
+          <tr >
+            <td className='flex items-center gap-3'>
+              <Image src="https://github.com/safak/nextadmin/blob/completed/public/noavatar.png?raw=true" alt='' width={40} height={40} className='rounded-full object-cover' />
+              Miley Cyrus
+            </td>
+            <td>
+              <span className={`text-[#EE6055]`}>Cancelled</span>
+            </td>
+            <td>21.01.2024</td>
+            <td>$18.000</td>
+          </tr>
+          <tr >
+            <td className='flex items-center gap-3'>
+              <Image src="https://github.com/safak/nextadmin/blob/completed/public/noavatar.png?raw=true" alt='' width={40} height={40} className='rounded-full object-cover' />
+              Justin Bieber
+            </td>
+            <td>
+              <span className={`text-[#77E192]`}>Done</span>
+            </td>
+            <td>04.01.2024</td>
+            <td>$6.100</td>
+          </tr>
         </tbody>
       </table>
     </div >
