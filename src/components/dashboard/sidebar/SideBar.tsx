@@ -1,5 +1,5 @@
 import React from 'react'
-import { MdAnalytics, MdAttachMoney, MdDashboard, MdHelpCenter, MdOutlineSettings, MdPeople, MdShoppingBag, MdSupervisedUserCircle, MdWork } from 'react-icons/md';
+import { MdAnalytics, MdAttachMoney, MdDashboard, MdHelpCenter, MdLogout, MdOutlineSettings, MdPeople, MdShoppingBag, MdSupervisedUserCircle, MdWork } from 'react-icons/md';
 import MenuLink from './menuLink/MenuLink';
 import Image from 'next/image';
 const menuList = [
@@ -84,6 +84,10 @@ const SideBar = () => {
           </li>
         ))}
       </ul>
+      <button className="p-5 flex items-center gap-2 hover:bg-[#4f5f7e] rounded cursor-pointer w-full my-2">
+        <MdLogout />
+        Logout
+      </button>
     </div>
   )
 }

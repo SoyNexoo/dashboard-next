@@ -11,7 +11,7 @@ interface props {
 const MenuLink = ({ icon, path, title }: props) => {
   const pathName = usePathname()
   return (
-    <Link href={path} className={`p-5 flex items-center gap-2 hover:bg-[#7d8fb1] rounded ${pathName === path && 'bg-[#7d8fb1]'}`}>
+    <Link href={path} className={`p-5 flex items-center gap-2 hover:bg-[#4f5f7e] rounded my-2 ${pathName === path && 'bg-[#4f5f7e]'}`}>
       {icon}
       {title}
     </Link>
