@@ -75,11 +75,11 @@ const SideBar = () => {
         </div>
       </div>
       <ul>
-        {menuList.map(ele => (
-          <li key={ele.title}>
+        {menuList.map((ele, index) => (
+          <li key={index}>
             <p className="text-stone-200 text-xs font-bold my-3">{ele.title}</p>
-            {ele.list.map(item => (
-              <MenuLink title={item.title} path={item.path} key={ele.title} icon={item.icon}></MenuLink>
+            {ele.list.map((item, index) => (
+              <MenuLink title={item.title} path={item.path} key={index} icon={item.icon}></MenuLink>
             ))}
           </li>
         ))}
