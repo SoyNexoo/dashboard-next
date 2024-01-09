@@ -66,7 +66,7 @@ const menuList = [
 ]
 const SideBar = () => {
   return (
-    <div className='sticky'>
+    <div className='relative h-full'>
       <div className='flex items-center gap-[20px] mb-[20px]'>
         <Image src="https://github.com/safak/nextadmin/blob/completed/public/noavatar.png?raw=true" alt="" width="50" height="50" className="rounded-full object-cover"></Image>
         <div className='flex flex-col'>
@@ -88,6 +88,8 @@ const SideBar = () => {
         <MdLogout />
         Logout
       </button>
+      <span className='text-[#3c4653] absolute bottom-[15px] text-xs'>Developed by Julian Luque</span>
+
     </div>
   )
 }

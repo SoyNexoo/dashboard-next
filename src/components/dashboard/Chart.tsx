@@ -62,7 +62,8 @@ const Chart = () => {
     },
   ];
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full bg-[#272c33] p-4 ">
+      <h2 className="mb-4 text-[2rem] font-light">Weekly Recap</h2>
       <LineChart
         width={chartWidth}
         data={data}

@@ -8,7 +8,7 @@ export default function RootLayout({
 }) {
   return (
     <div className="flex p-6 ">
-      <div className="flex-1 p-[20px] rounded-md bg-[#272c33]">
+      <div className="flex-1 p-[20px] relativo rounded-md bg-[#272c33]">
         <SideBar></SideBar>
       </div>
       <div className="flex-[4] px-[20px]">
