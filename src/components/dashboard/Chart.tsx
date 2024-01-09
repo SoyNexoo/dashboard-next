@@ -1,9 +1,22 @@
 'use client'
-import React from 'react'
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import React, { useEffect, useState } from 'react'
+import { LineChart, Line, XAxis, YAxis, Tooltip, Legend } from 'recharts';
 
 
 const Chart = () => {
+  const [chartWidth, setChartWidth] = useState(window.innerWidth / 1.7);
+
+  const handleResize = () => {
+    setChartWidth(window.innerWidth / 1.7);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   const data = [
     {
       name: 'Page A',
@@ -51,7 +64,7 @@ const Chart = () => {
   return (
     <div className="w-full h-full">
       <LineChart
-        width={700}
+        width={chartWidth}
         data={data}
         height={300}
         margin={{
@@ -61,10 +74,9 @@ const Chart = () => {
           bottom: 5,
         }}
       >
-        <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" />
         <YAxis />
-        <Tooltip />
+        <Tooltip contentStyle={{ border: "#151c2c", background: "#272c33" }} />
         <Legend />
         <Line type="monotone" dataKey="pv" stroke="#8884d8" strokeDasharray="5 5" />
         <Line type="monotone" dataKey="uv" stroke="#82ca9d" strokeDasharray="3 4 5 2" />
